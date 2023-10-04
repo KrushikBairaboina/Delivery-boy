@@ -1,0 +1,10 @@
+import express from  'express';
+import { deliveryLogIn, deliverySignUp, editDelivery } from '../controller/delivery-controller.js';
+import { editOrder, getOrders } from '../controller/order-controller.js';
+const router = express.Router();
+router.post('/signup',deliverySignUp);
+router.post('/login',deliveryLogIn);
+router.put('/account/:id',editDelivery);
+router.get('/orders',getOrders);
+router.put('/orders/:id/:index',editOrder);
+export default router;
